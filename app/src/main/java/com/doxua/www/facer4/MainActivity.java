@@ -51,7 +51,6 @@ import static org.bytedeco.javacpp.opencv_core.Rect;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "RegFaces";
-    public static final String EIGEN_FACES_CLASSIFIER = "eigenFacesClassifier.yml";
     private static final int ACCEPT_LEVEL = 1000;
     private static final int MIDDLE_ACCEPT_LEVEL = 2000;
     private static final int PICK_IMAGE = 100;
@@ -70,9 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Face Recognition.
     private FaceRecognizer faceRecognizer = EigenFaceRecognizer.create();
-
-    // External storage.
-    public static final String EXTERNAL_TRAIN_FOLDER = "saved_images";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -229,9 +225,7 @@ public class MainActivity extends AppCompatActivity {
         // -----------------------------------------------------------------------------------------
         recognizeMultiple(this, faces.get(0), greyMat, tv);
     }
-
-
-
+    
     /***********************************************************************************************
      *
      *
@@ -239,8 +233,6 @@ public class MainActivity extends AppCompatActivity {
      *
      *
      **********************************************************************************************/
-
-
     /**
      * Predict using one model only but can predict faces of different people.
      * Recognize multiple faces using only one model.
@@ -373,8 +365,6 @@ public class MainActivity extends AppCompatActivity {
         File f = new File(modelFile.getAbsolutePath());
         return f;
     }
-
-
 
     /**
      * Load the CascadeClassifier for Face Detection.
