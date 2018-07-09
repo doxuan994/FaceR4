@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         // -----------------------------------------------------------------------------------------
         recognizeMultiple(this, faces.get(0), greyMat, tv);
     }
-    
+
     /***********************************************************************************************
      *
      *
@@ -333,8 +333,8 @@ public class MainActivity extends AppCompatActivity {
         InputStream inputStream;
 
         inputStream = context.getResources().openRawResource(resId);
-        File xmlDir = context.getDir("xml", Context.MODE_PRIVATE);
-        File modelFile = new File(xmlDir, "temp.xml");
+        File xmlDir = context.getDir("yml", Context.MODE_PRIVATE);
+        File modelFile = new File(xmlDir, "temp.yml");
         try {
             fos = new FileOutputStream(modelFile);
             byte[] buffer = new byte[4096];
